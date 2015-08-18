@@ -1,0 +1,80 @@
+
+/* tiles */
+
+.tile-section {
+    position: relative;
+}
+
+.tile-img {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    cursor: pointer;
+    background: #000;
+    overflow: hidden;
+    height: 100%;
+}
+
+.tile-img:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 40%;
+    width: 100%;
+    height: 50%;
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.tile-img:hover:after {
+    opacity: 1;
+    bottom: 0%;
+}
+
+.tile-img img {
+    width: 100%;
+    display: block;
+    height: auto;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+.tile-section.active .tile-img img {
+    opacity: .5
+}
+
+.tile-section.active .tile-img.active img {
+    opacity: 1;
+}
+
+.tile-text {
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: 20;
+    width: 100%;
+}
+
+.tile-text .tile-content {
+    padding: 20px 0;
+}
+
+.tile-spacer {
+    height: 0;
+    width: 100%;
+    position: relative;
+    clear: both;
+    z-index: 10;
+}
+
+.tile-text,
+.tile-spacer {
+    -webkit-transition: height .6s;
+    transition: height .6s;
+}
